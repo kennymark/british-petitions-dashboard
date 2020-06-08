@@ -2,7 +2,6 @@ import { Heading, Icon, SimpleGrid, Spinner, Text, Tooltip } from '@chakra-ui/co
 import { useStoreState } from 'easy-peasy'
 import moment from 'moment/moment'
 import { Fragment, useEffect, useState } from 'react'
-import ReactGA from 'react-ga'
 import GovtResponse from './govt-response'
 import SEO from './SEO'
 import { ParsedStatWithoutBorder } from './stat'
@@ -24,9 +23,6 @@ function Dashboard() {
     setData(currentPetition?.data?.attributes)
     setLoading(false)
 
-    if (process.env.NODE_ENV == 'production') {
-      ReactGA.initialize('UA-137485697-1');
-    }
 
   }, [currentPetition])
 

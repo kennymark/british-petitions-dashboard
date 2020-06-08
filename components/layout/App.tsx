@@ -4,7 +4,7 @@ import Sidebar from '../sidebar'
 import Dashboard from '../dashboard'
 import Footer from './footer'
 import { useIsOnline } from '../../shared/hooks/useIsOnline'
-
+import ReactGA from 'react-ga'
 
 
 
@@ -14,6 +14,10 @@ function Layout() {
 
   useEffect(() => {
     toggleOfflineMessage()
+
+    if (process.env.NODE_ENV == 'production') {
+      ReactGA.initialize('UA-68267074-4');
+    }
     return () => { }
 
   }, [isOnline.isOnline])

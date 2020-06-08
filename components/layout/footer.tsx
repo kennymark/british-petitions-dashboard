@@ -1,12 +1,16 @@
+import { Flex, Text } from '@chakra-ui/core'
 import React from 'react'
-import { Box, Text } from '@chakra-ui/core'
 
 
 function Footer() {
   return (
-    <Box background='black' minHeight={100} display='flex' justifyContent='center' alignItems='center' w='100%'>
-      <Text color='gray.500'>Copyright © 2020 Kenny Mark</Text>
-    </Box>
+    <Flex background='black' minHeight={100} flexDirection='column' justifyContent='center' alignItems='center' w='100%'>
+      <Text color='gray.500' fontWeight='bold' letterSpacing={1.3}>Built with ❤️ by <span>
+        <a href="kennymark.co.uk" target='_blank'>Kenny Mark</a>
+      </span>
+      </Text>
+      <Text color='gray.500'>Copyright © 2020</Text>
+    </Flex>
   )
 }
 
