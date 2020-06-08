@@ -17,13 +17,9 @@ function Dashboard() {
   const currentPetition = useStoreState(state => state.petition.currentPetition)
 
   useEffect(() => {
-    console.log({ currentPetition })
-
     setLoading(true)
     setData(currentPetition?.data?.attributes)
     setLoading(false)
-
-
   }, [currentPetition])
 
   function parseLink(): string {

@@ -14,10 +14,7 @@ function Layout() {
 
   useEffect(() => {
     toggleOfflineMessage()
-    console.log(process.env)
-    if (process.env.NODE_ENV == 'production') {
-      ReactGA.initialize('UA-68267074-4');
-    }
+    ReactGA.initialize('UA-68267074-4');
     return () => { }
 
   }, [isOnline.isOnline])
