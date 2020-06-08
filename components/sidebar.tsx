@@ -1,7 +1,7 @@
 import { Flex, Heading, Tab, TabList, Tabs, Icon } from "@chakra-ui/core";
 import axios from 'axios';
 import { useStoreActions, useStoreState } from 'easy-peasy';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import useWindowSize from "../shared/hooks/useWindowSize";
 import PetitionCard from "./sidebar/petition-card";
 import PetitionSkeleton from "./skeletons/petition";
@@ -19,6 +19,7 @@ function Sidebar(width) {
 
   const [petitionState, setPetitionState] = useState(true)
   const [loading, setLoading] = useState(false)
+  const memoisedPetitions = useMemo(() => allPetitions, [allPetitions]);
 
   useEffect(() => {
     fetchAllPetitions()
@@ -73,7 +74,7 @@ function Sidebar(width) {
         <Heading fontSize='2xl' fontWeight='bold' color='green.500' >
           {petitionState ? 'Open ' : 'Archived '} Petitions
         </Heading>
-        <Icon name="close" size="20px" color='green.400' display={['initial', 'none']} onClick={toggleSideBar} />
+        <Icon name="close" size="20px" color='green.400' display={['initial', '', 'initial', 'none']} onClick={toggleSideBar} />
       </Flex>
 
 
@@ -86,7 +87,7 @@ function Sidebar(width) {
 
       {loading && <PetitionSkeleton count={8} />}
 
-      {allPetitions && allPetitions.map(petition => (
+      {memoisedPetitions && memoisedPetitions.map(petition => (
         <PetitionCard key={petition.id} setCurrentPetition={setCurrentPetition} petition={petition} />
       ))}
     </Flex>

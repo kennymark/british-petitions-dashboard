@@ -16,7 +16,7 @@ function AllTabs({ data }) {
         <Tab _focus={focusProps}>Table View</Tab>
         <Tab _focus={focusProps}>Statistics</Tab>
         <Tab _focus={focusProps}>Regional Chart</Tab>
-        <Tab _focus={focusProps}>Constituency Map</Tab>
+        {/* <Tab _focus={focusProps}>Constituency Map</Tab> */}
       </TabList>
 
       <TabPanels>

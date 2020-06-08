@@ -50,7 +50,7 @@ function Layout() {
 
         <Flex
           minH='100vh'
-          py={[0, 20]}
+          py={[0, null, 5, 20]}
           pb={[20, null]}
           px={[2, 20, 20, 200]}
           justifySelf='center'
