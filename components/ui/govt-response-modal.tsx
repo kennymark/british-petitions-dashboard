@@ -7,7 +7,7 @@ function GovtResponseModal({ body }) {
 
   return (
     <>
-      <Button ref={btnRef} onClick={onOpen} _focus={{ outline: 'none' }} variant='ghost' textAlign='center' color='green.900' variantColor='green' size='sm'>
+      <Button ref={btnRef} onClick={onOpen} _focus={{ outline: 'none' }} variant='ghost' textAlign='center' color='green.700' variantColor='green' size='sm' _hover={{ fontWeight: 'bold', color: 'green:900', bg: 'green.200' }}>
         View Response
       </Button>
 
