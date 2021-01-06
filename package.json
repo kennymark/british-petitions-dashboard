@@ -11,7 +11,7 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "easy-peasy": "^3.3.0",
     "emotion-theming": "^10.0.27",
     "lodash": "^4.17.15",
